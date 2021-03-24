@@ -66,7 +66,6 @@ router.post("/", (req, res) => {
 				});
 				return ProductTag.bulkCreate(tagProductIdArr);
 			}
-			// if no product tags, just respond
 			res.status(200).json(product);
 		})
 		.then((productTagIds) => res.status(200).json(productTagIds))
