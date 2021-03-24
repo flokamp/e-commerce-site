@@ -13,8 +13,11 @@ router.get("/", (req, res) => {
 				attributes: ["category_name"],
 			},
 			{
-				model: ProductTag,
-				attributes: ["tag_id"],
+				model: Tag,
+				through: ProductTag,
+				as: "tags",
+				foreignKey: "tag_id",
+				attributes: ["tag_name"],
 			},
 		],
 	})
