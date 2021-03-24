@@ -1,6 +1,6 @@
-# Furniture Warehouse (ECommerce Backend)
+# ECommerce Backend
 
-[How to use the Furniture Warehouse](https://drive.google.com/file/d/1YwDx5L3ePf7dfKCjN75mRpWcw91wpVGj/view)
+[How to use ECommerce Backend](https://drive.google.com/file/d/1YwDx5L3ePf7dfKCjN75mRpWcw91wpVGj/view)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
