@@ -1,6 +1,6 @@
 # Furniture Warehouse (ECommerce Backend)
 
-[How to use the Furniture Warehouse](google.com)
+[How to use the Furniture Warehouse](https://drive.google.com/file/d/1YwDx5L3ePf7dfKCjN75mRpWcw91wpVGj/view)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -8,7 +8,7 @@
 
 Express.js, Sequelize, and MySQL, powers the back end of Furniture Warehouse, an ecommerce website. The database includes products, categories, and tags and allows requests to easily update the database.
 
-![Screenshot](assets/images/ecommercedb.png)
+![Screenshot](assets/images/ecommerce.png)
 
 ## Table of Contents
 
@@ -31,20 +31,25 @@ From the command line:
 ## Usage
 
 ### Create the schema from the MySQL shell
+
 1. From the root directory of your project, type mysql -u root -p and press Return
 2. Enter your MySQL password and press Return again to enter the MySQL shell environment
 3. Execute the command: `source db/schema.sql`
 4. Exit the shell environement by enterting `quit`
 
 ### Seed the database
+
 1. Execute the command: `npm run seed`
 
 ### Start the application server
+
 1. Enter `node server` in the command line
 
 ### View or update the database
+
 1. Open Insomnia Core
 2. Execute a request
+
 ![Screenshot](assets/images/requests.png)
 
 ## License

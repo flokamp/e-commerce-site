@@ -86,33 +86,16 @@ router.put("/:id", (req, res) => {
 			// find all associated products from ProductTag
 			return ProductTag.findAll({ where: { tag_id: req.params.id } });
 		})
-		.then((productTags) => {
-			// get list of current product_ids
-			const tagProductIds = productTags.map(({ product_id }) => product_id);
-			// create filtered list of new product_ids
-			const newProductIds = req.body.productIds
-				.filter((product_id) => !tagProductIds.includes(product_id))
-				.map((product_id) => {
-					return {
-						tag_id: req.params.id,
-						product_id,
-					};
-				});
-			// figure out which ones to remove
-			const tagProductsToRemove = tagProducts
-				.filter(({ product_id }) => !req.body.productsIds.includes(product_id))
-				.map(({ id }) => id);
-
-			// run both actions
-			return Promise.all([
-				ProductTag.destroy({ where: { id: tagsProductsToRemove } }),
-				ProductTag.bulkCreate(newProductIds),
-			]);
+		.then((dbTagData) => {
+			if (!dbTagData[0]) {
+				res.status(404).json({ message: "No category found with this id" });
+				return;
+			}
+			res.json(dbTagData);
 		})
-		.then((updatedTagProducts) => res.json(updatedTagProducts))
 		.catch((err) => {
-			// console.log(err);
-			res.status(400).json(err);
+			console.log(err);
+			res.status(500).json(err);
 		});
 });
 
