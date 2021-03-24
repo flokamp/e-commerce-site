@@ -25,6 +25,4 @@ Tag.init(
 	}
 );
 
-Category.hasMany(Category, { foreignKey: "category_id" });
-
 module.exports = Tag;
